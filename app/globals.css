@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  /* Design colors from .pen file */
+  --color-bg: #F5F4F1;
+  --color-white: #FFFFFF;
+  --color-primary: #3D8A5A;
+  --color-text-primary: #1A1918;
+  --color-text-secondary: #6D6C6A;
+  --color-text-tertiary: #9C9B99;
+  --color-text-inactive: #A8A7A5;
+  --color-border: #E5E4E1;
+  --color-border-secondary: #D1D0CD;
+  --color-black: #000000;
+}
+
+@layer base {
+  html, body {
+    height: 100%;
+  }
+
+  /* Font family utilities */
+  .font-outfit {
+    font-family: "Outfit", sans-serif;
+  }
+
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+
+  /* Icon font utility for Lucide */
+  .icon-lucide {
+    font-family: "lucide";
+    font-feature-settings: normal;
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  /* Custom range slider styling */
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
